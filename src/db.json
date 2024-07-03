@@ -1,0 +1,41 @@
+{
+    "users" : [
+        {
+            "id" : 1,
+            "Username": "jcsteffen03",
+            "password": "justinsteffen",
+            "UserCode": "49"
+        }
+    ],
+    "landscapers" : [
+        {
+            "id": 1,
+            "username": "zebrascapes",
+            "password": "tkhaley99",
+            "landscaperCode": "750"
+        }
+    ],
+    "projects": [
+                {
+                    "id": 1,
+                    "projectName": "BackYard",
+                    "projectCode": 420,
+                    "user": 1,
+                    "landscaper": {
+                        "id":2
+                    },
+                    "projectNotes": "I am putting plants in my backyard",
+                    "plants": [
+                        {
+                            "id": 1,
+                            "plantName": "European Silver Fir",
+                            "scientificName": "Abies alba",
+                            "type": "tree",
+                            "cycle": "Perennial",
+                            "image": "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/medium/49255769768_df55596553_b.jpg"
+                        }
+                    ]
+                }
+            ]
+}
+
