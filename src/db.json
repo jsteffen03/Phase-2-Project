@@ -2,24 +2,22 @@
     "users" : [
         {
             "id" : 1,
-            "Username": "jcsteffen03",
-            "password": "justinsteffen",
-            "UserCode": "49"
+            "username": "",
+            "password": ""
         }
     ],
     "landscapers" : [
         {
             "id": 1,
-            "username": "zebrascapes",
-            "password": "tkhaley99",
-            "landscaperCode": "750"
+            "username": "",
+            "password": ""
         }
     ],
     "projects": [
                 {
                     "id": 1,
                     "projectName": "BackYard",
-                    "projectCode": 420,
+                    "projectCode": 420, 
                     "user": 1,
                     "landscaper": {
                         "id":2

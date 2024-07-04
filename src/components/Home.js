@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom"
+import { Button } from 'semantic-ui-react'
+import '../styles.css';
 
 function Home(){
 
@@ -7,15 +9,32 @@ function Home(){
     return(
         <>
         <div>Home Page</div>
-        <h1>My Landscaper</h1>
-        <p>
-            My Landscaper is an application that helps bridge the gap between You and Landscapers.
-            My Landscaper allows you to create projects, whether it is a current project or just planning for the future, and search through a wide varitey of plants that you would like to see in your landscape.
-            You can then give Lanscapers a code for your project, there they will be able to view the plants you have selected and easily incorprate them into a design for your project.
-            My Landscaper is always expanding our plant data base and coming up with new ideas to help you easily tell your landscaper what you would like on your project, so keep a lookout for new features!
-        </p>
-        <button onClick={()=>navigate("/Login")}>Click to Login or Create an Account</button>
-        </>
+        <h1 className="Header">My Landscaper</h1>
+        <div className="Homepage">
+          <h2 className="About">Welcome to My Landscaper</h2>
+          <p className="About">
+            At My Landscaper, we bridge the gap between homeowners and professional landscapers. Our platform empowers you to plan and create stunning landscape projects with ease.
+          </p>
+          <h3 className="About">Create and Plan</h3>
+          <p className="About">
+            Whether you're working on a current project or planning for the future, My Landscaper allows you to design your dream landscape. Browse through our extensive plant database to select the perfect greenery for your space.
+          </p>
+          <h3 className="About">Connect with Professionals</h3>
+          <p className="About">
+            Once you create a project, a unique code will be generated for you to share with any landscape company. They can view your plant selections and seamlessly incorporate them into their designs, ensuring your vision becomes a reality.
+          </p>
+          <h3 className="About">Always Growing</h3>
+          <p className="About">
+            Our plant database is continually expanding, and we're constantly developing new features to make your landscaping experience even better. Stay tuned for updates and innovations from My Landscaper.
+          </p>
+          <h4 className="About">Sign up today and start creating the landscape you've always dreamed of!</h4>
+          <div className="Button">
+            <Button color='green' onClick={() => navigate("/Login")}>
+              Click to Login or Create an Account
+            </Button>
+          </div>
+        </div>
+      </>
     )
 }
 
