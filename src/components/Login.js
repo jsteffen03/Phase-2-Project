@@ -2,15 +2,37 @@ import { useNavigate} from "react-router-dom"
 import { useState } from "react"
 import { FormField, Button, Form } from 'semantic-ui-react'
 
-function Login({user, setUser, password, setPassword, userData}){
+function Login({user, setUser, password, setPassword, userData, landscapeData}){
+
 
     const navigate = useNavigate()
 
-    function login(){
-        // if(user === userData.username ? ){
-        // }
-        navigate("/user");
+    function loginUser(){
+        console.log(userData)
+        const foundUser = userData.find((users) => users.username === user);
+        if (foundUser) {
+            if (foundUser.password === password) {
+              navigate("/user");
+            } else {
+              alert("Password incorrect");
+            }
+          } else {
+            alert("Sorry, Couldn't find an account with entered username");
+          }
+    }
 
+    function loginLandscaper(){
+        console.log(userData)
+        const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === user);
+        if (foundLandscaper) {
+            if (foundLandscaper.password === password) {
+                navigate("/landscaper");
+            } else {
+              alert("Password incorrect");
+            }
+          } else {
+            alert("Sorry, Couldn't find an account with entered username");
+          }
     }
 
     return(
@@ -25,8 +47,8 @@ function Login({user, setUser, password, setPassword, userData}){
                 <label>Password</label>
                 <input placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
             </FormField>
-            <Button onClick={login}>Login Home Owner</Button>
-            <Button onClick={()=>navigate("/landscaper")}>Login Landscaper</Button>
+            <Button onClick={loginUser}>Login Home Owner</Button>
+            <Button onClick={loginLandscaper}>Login Landscaper</Button>
         </Form>
         <h1>Create Account</h1>
         <Form>

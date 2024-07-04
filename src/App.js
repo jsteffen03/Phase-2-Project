@@ -43,6 +43,8 @@ function App() {
     .then(data=>setProjectData(data))
     }
   ,[])
+
+  console.log(landscapeData)
   
   return (
     <div>
@@ -52,7 +54,7 @@ function App() {
         <Home/>
       }/>
       <Route path="/login" element={
-        <Login user={user} setUser={setUser} password={password} setPassword={setPassword}/>
+        <Login user={user} setUser={setUser} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData}/>
       }/>
       <Route path="/landscaper" element={
         <Landscaperpage/>

@@ -2,8 +2,8 @@
     "users" : [
         {
             "id" : 1,
-            "username": "",
-            "password": ""
+            "username": "Justin",
+            "password": "Justin"
         }
     ],
     "landscapers" : [
