@@ -13,7 +13,7 @@ function App() {
   const [userData, setUserData] = useState([])
   const [landscapeData, setLandscapeData] = useState([])
   const [projectData, setProjectData] = useState([])
-  const [user, setUser] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
   useEffect(()=>{
@@ -44,8 +44,6 @@ function App() {
     }
   ,[])
 
-  console.log(landscapeData)
-  
   return (
     <div>
     <BrowserRouter>
@@ -54,7 +52,7 @@ function App() {
         <Home/>
       }/>
       <Route path="/login" element={
-        <Login user={user} setUser={setUser} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData}/>
+        <Login username={username} setUsername={setUsername} setUserData={setUserData} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData}/>
       }/>
       <Route path="/landscaper" element={
         <Landscaperpage/>

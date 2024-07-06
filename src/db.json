@@ -1,39 +1,43 @@
 {
-    "users" : [
+  "users": [
+    {
+      "id": 1,
+      "username": "Justin",
+      "password": "Steffen"
+    }
+  ],
+  "landscapers": [
+    {
+      "id": 1,
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "ecc1",
+      "username": "Zebrascapes",
+      "password": "tkhaley"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "BackYard",
+      "projectCode": 420,
+      "user": 1,
+      "landscaper": {
+        "id": 2
+      },
+      "projectNotes": "I am putting plants in my backyard",
+      "plants": [
         {
-            "id" : 1,
-            "username": "Justin",
-            "password": "Justin"
+          "id": 1,
+          "plantName": "European Silver Fir",
+          "scientificName": "Abies alba",
+          "type": "tree",
+          "cycle": "Perennial",
+          "image": "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/medium/49255769768_df55596553_b.jpg"
         }
-    ],
-    "landscapers" : [
-        {
-            "id": 1,
-            "username": "",
-            "password": ""
-        }
-    ],
-    "projects": [
-                {
-                    "id": 1,
-                    "projectName": "BackYard",
-                    "projectCode": 420, 
-                    "user": 1,
-                    "landscaper": {
-                        "id":2
-                    },
-                    "projectNotes": "I am putting plants in my backyard",
-                    "plants": [
-                        {
-                            "id": 1,
-                            "plantName": "European Silver Fir",
-                            "scientificName": "Abies alba",
-                            "type": "tree",
-                            "cycle": "Perennial",
-                            "image": "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/medium/49255769768_df55596553_b.jpg"
-                        }
-                    ]
-                }
-            ]
+      ]
+    }
+  ]
 }
-

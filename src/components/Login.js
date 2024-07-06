@@ -2,14 +2,15 @@ import { useNavigate} from "react-router-dom"
 import { useState } from "react"
 import { FormField, Button, Form } from 'semantic-ui-react'
 
-function Login({user, setUser, password, setPassword, userData, landscapeData}){
+function Login({username, setUsername, password, setPassword, userData, landscapeData, setUserData}){
 
+    const [verifyPassword, setVerifyPassword] = useState("")
 
     const navigate = useNavigate()
 
     function loginUser(){
         console.log(userData)
-        const foundUser = userData.find((users) => users.username === user);
+        const foundUser = userData.find((users) => users.username === username);
         if (foundUser) {
             if (foundUser.password === password) {
               navigate("/user");
@@ -23,7 +24,7 @@ function Login({user, setUser, password, setPassword, userData, landscapeData}){
 
     function loginLandscaper(){
         console.log(userData)
-        const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === user);
+        const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === username);
         if (foundLandscaper) {
             if (foundLandscaper.password === password) {
                 navigate("/landscaper");
@@ -35,39 +36,113 @@ function Login({user, setUser, password, setPassword, userData, landscapeData}){
           }
     }
 
+    function createUser(){
+        console.log(userData)
+        const foundUser = userData.find((users) => users.username === username);
+        if (!foundUser) {
+            if (verifyPassword === password) {
+                const newData = { 
+                    username: username, 
+                    password: password
+                 };
+                fetch('http://localhost:4000/users', {
+                    method: 'POST', 
+                    headers: {
+                      'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(newData),
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log('Success:', data);
+                    const newArr = [...userData, newData]
+                    console.log(newArr)
+                    setUserData(newArr);
+                    navigate("/user");
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                  });
+            } else {
+                alert("Passwords do not match");
+            }
+          } else {
+                alert("Sorry, this Username is already in use.");
+          }
+    }
+    
+    function createLandscaper(){
+        console.log(userData)
+        const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === username);
+        if (!foundLandscaper) {
+            if (verifyPassword === password) {
+                const newData = { 
+                    username: username, 
+                    password: password
+                 };
+                fetch('http://localhost:4000/landscapers', {
+                    method: 'POST', 
+                    headers: {
+                      'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(newData),
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log('Success:', data);
+                    const newArr = [...userData, newData]
+                    console.log(newArr)
+                    setUserData(newArr);
+                    navigate("/user");
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                  });
+            } else {
+                alert("Passwords do not match");
+            }
+          } else {
+                alert("Sorry, this Username is already in use.");
+          }
+    }
+
     return(
-        <>
-        <h1>Login</h1>
-        <Form>
+        <div className="Container"> 
+        <Form className="Login">
+            <h1>Login</h1>
             <FormField>
                 <label>Username</label>
-                <input placeholder='Username' onChange={(e)=>setUser(e.target.value)}/>
+                <input placeholder='Username' onChange={(e)=>setUsername(e.target.value)}/>
             </FormField>
             <FormField>
                 <label>Password</label>
                 <input placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
             </FormField>
-            <Button onClick={loginUser}>Login Home Owner</Button>
-            <Button onClick={loginLandscaper}>Login Landscaper</Button>
+            <div className="Button">
+            <Button color='green' onClick={loginUser}>Login Home Owner</Button>
+            <Button color='green' onClick={loginLandscaper}>Login Landscaper</Button>
+            </div>
         </Form>
+        <Form className="CreateAccount">
         <h1>Create Account</h1>
-        <Form>
             <FormField>
                 <label>Username</label>
-                <input placeholder='Username' />
+                <input placeholder='Username' onChange={(e)=>setUsername(e.target.value)}/>
             </FormField>
             <FormField>
                 <label>Password</label>
-                <input placeholder='Password' />
+                <input placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
             </FormField>
             <FormField>
                 <label>Verify Password</label>
-                <input placeholder='Password' />
+                <input placeholder='Password' onChange={(e)=>setVerifyPassword(e.target.value)}/>
             </FormField>
-            <Button onClick={()=>navigate("/user")}>Create a Home Owner Acount</Button>
-            <Button onClick={()=>navigate("/landscaper")}>Create a Landscaper Acount</Button>
+            <div className="Button">
+            <Button color='green' onClick={createUser}>Create a Home Owner Acount</Button>
+            <Button color='green' onClick={createLandscaper}>Create a Landscaper Acount</Button>
+            </div>
         </Form>
-        </>
+        </div>
     )
 }
 

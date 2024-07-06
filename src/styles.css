@@ -23,3 +23,31 @@
   display: flex;
   justify-content: center;
 }
+
+.Container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.Login{
+  width: 40%; 
+  margin-top: 150px;
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  background-color: #f9f9f9; 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+}
+
+.CreateAccount{
+  width: 40%; 
+  margin-top: 150px;
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  background-color: #f9f9f9; 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+}
