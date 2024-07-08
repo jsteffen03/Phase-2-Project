@@ -2,18 +2,13 @@
   "users": [
     {
       "id": 1,
-      "username": "Justin",
-      "password": "Steffen"
+      "username": "Justin Steffen",
+      "password": "Password1"
     }
   ],
   "landscapers": [
     {
       "id": 1,
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "ecc1",
       "username": "Zebrascapes",
       "password": "tkhaley"
     }
@@ -22,7 +17,6 @@
     {
       "id": 1,
       "projectName": "BackYard",
-      "projectCode": 420,
       "user": 1,
       "landscaper": {
         "id": 2
@@ -38,6 +32,26 @@
           "image": "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/medium/49255769768_df55596553_b.jpg"
         }
       ]
+    },
+    {
+      "id": "520e",
+      "projectName": "Front Yard",
+      "user": "Justin Steffen",
+      "landscaper": {
+        "id": ""
+      },
+      "projectNotes": "Putting in a Paver Path as well as some plants and boulders.",
+      "plants": []
+    },
+    {
+      "id": "4cb7",
+      "projectName": "Side Yard",
+      "user": "Justin Steffen",
+      "landscaper": {
+        "id": ""
+      },
+      "projectNotes": "Apart of Front Yard Project",
+      "plants": []
     }
   ]
 }

@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react"
+import {React, useState, useEffect, useRef} from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css'
 import Home from "./components/Home";
@@ -13,7 +13,8 @@ function App() {
   const [userData, setUserData] = useState([])
   const [landscapeData, setLandscapeData] = useState([])
   const [projectData, setProjectData] = useState([])
-  const [username, setUsername] = useState("")
+  const [user, setUser] = useState("")
+  const currentUser = useRef(null)
   const [password, setPassword] = useState("")
 
   useEffect(()=>{
@@ -44,6 +45,21 @@ function App() {
     }
   ,[])
 
+  function handleSubmit(newProj){
+    fetch("http://localhost:4000/projects",{
+      method:"POST",
+      headers:{
+        "Content-Type": "Application/json"
+      },
+      body: JSON.stringify(newProj)
+    })
+    .then(r=>r.json())
+    .then(data=>{
+      const newArr = [...projectData,data]
+      setProjectData(newArr)
+    })
+  }
+
   return (
     <div>
     <BrowserRouter>
@@ -52,13 +68,13 @@ function App() {
         <Home/>
       }/>
       <Route path="/login" element={
-        <Login username={username} setUsername={setUsername} setUserData={setUserData} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData}/>
+        <Login user={user} setUser={setUser} setUserData={setUserData} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData} currentUser={currentUser}/>
       }/>
       <Route path="/landscaper" element={
         <Landscaperpage/>
       }/>
       <Route path="/user" element={
-        <Userpage/>
+        <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData}/>
       }/>
       <Route path="/user/search" element={
         <Search/>
