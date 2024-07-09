@@ -30,7 +30,7 @@ function App() {
     .then(data=>setUserData(data))
     }
   ,[])
-
+ 
   useEffect(()=>{
     fetch("http://localhost:4000/landscapers")
     .then(r=>r.json())
@@ -60,6 +60,20 @@ function App() {
     })
   }
 
+  function handleEdit(id,edit){
+    fetch(`http://localhost:4000/projects/${id}`,{
+    method:'PATCH',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(edit)
+    })
+    .then(r=>r.json())
+    .then(data=> {
+        const newArray=[...projectData]
+        newArray[id-1] = data
+        setProjectData(newArray)
+    })
+}
+
   return (
     <div>
     <BrowserRouter>
@@ -74,7 +88,7 @@ function App() {
         <Landscaperpage/>
       }/>
       <Route path="/user" element={
-        <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData}/>
+        <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit}/>
       }/>
       <Route path="/user/search" element={
         <Search/>

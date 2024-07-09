@@ -85,13 +85,13 @@
 
 .Header{
   border: 1px solid #000000; 
-  background-color: #7dd159ff;
+  background-color: rgb(81, 153, 57);
   height: 100px;
 }
 
 .MyProjects{
   border: 1px solid #000000; 
-  background-color: #b2e99fff;
+  background-color: rgb(164, 206, 150);
   width: 25%
 }
 
@@ -104,6 +104,6 @@
 .ProjectNotes{
   border: 1px solid #000000; 
   float: right;
-  background-color: #b2e99fff;
+  background-color: rgb(164, 206, 150);
   width: 25%
 }

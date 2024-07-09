@@ -11,17 +11,23 @@
       "id": 1,
       "username": "Zebrascapes",
       "password": "tkhaley"
+    },
+    {
+      "id": 2,
+      "username": "Pheasant Ridge",
+      "password": "corbin1"
     }
   ],
   "projects": [
     {
-      "id": 1,
+      "id": "750a",
       "projectName": "BackYard",
-      "user": 1,
-      "landscaper": {
-        "id": 2
-      },
-      "projectNotes": "I am putting plants in my backyard",
+      "user": "Justin Steffen",
+      "landscaper": [
+        1,
+        2
+      ],
+      "projectNotes": "I am putting plants and boulders in my backyard ",
       "plants": [
         {
           "id": 1,
@@ -30,6 +36,14 @@
           "type": "tree",
           "cycle": "Perennial",
           "image": "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/medium/49255769768_df55596553_b.jpg"
+        },
+        {
+          "id": 2,
+          "plantName": "Johin Japanese Maple",
+          "scientificName": "Red Full Moon Maple",
+          "type": "shrub",
+          "cycle": "Perennial",
+          "image": "https://perenual.com/storage/species_image/10_acer_johin/og/pexels-photo-2183508.jpg"
         }
       ]
     },
@@ -37,20 +51,8 @@
       "id": "520e",
       "projectName": "Front Yard",
       "user": "Justin Steffen",
-      "landscaper": {
-        "id": ""
-      },
-      "projectNotes": "Putting in a Paver Path as well as some plants and boulders.",
-      "plants": []
-    },
-    {
-      "id": "4cb7",
-      "projectName": "Side Yard",
-      "user": "Justin Steffen",
-      "landscaper": {
-        "id": ""
-      },
-      "projectNotes": "Apart of Front Yard Project",
+      "landscaper": [],
+      "projectNotes": "I am putting plants in my frontyard along with different pavers",
       "plants": []
     }
   ]
