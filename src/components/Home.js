@@ -8,7 +8,6 @@ function Home(){
 
     return(
         <div className="body">
-        <div>Home Page</div>
         <h1 className="Title">My Landscaper</h1>
         <div className="Homepage">
           <h2 className="About">Welcome to My Landscaper</h2>

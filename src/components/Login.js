@@ -24,7 +24,6 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
     }
 
     function loginLandscaper(){
-        console.log(userData)
         const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === user);
         if (foundLandscaper) {
             if (foundLandscaper.password === password) {
@@ -39,7 +38,6 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
     }
 
     function createUser(){
-        console.log(userData)
         const foundUser = userData.find((users) => users.username === user);
         if (!foundUser) {
             if (verifyPassword === password) {

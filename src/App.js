@@ -16,6 +16,7 @@ function App() {
   const [user, setUser] = useState("")
   const currentUser = useRef(null)
   const [password, setPassword] = useState("")
+  const [displayName, setDisplayName] = useState("")
 
   useEffect(()=>{
     fetch("https://perenual.com/api/species-list?key=sk-9AFw6684d830513f76129")
@@ -72,7 +73,24 @@ function App() {
         newArray[id-1] = data
         setProjectData(newArray)
     })
-}
+  }
+
+  function handleDelete(id){
+    fetch(`http://localhost:4000/projects/${id}`,{
+    method:'DELETE'
+    })
+    .then(r=>r.json())
+    .then(data=> console.log("Deleted: ",data))
+    const notRemoved = projectData.filter(project=>{
+        if(project.id === id){
+            return false
+        }
+        return true
+    })
+    console.log(notRemoved)
+    setProjectData(notRemoved)
+    setDisplayName("")
+  }
 
   return (
     <div>
@@ -88,7 +106,7 @@ function App() {
         <Landscaperpage/>
       }/>
       <Route path="/user" element={
-        <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit}/>
+        <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit} handleDelete={handleDelete} displayName={displayName} setDisplayName={setDisplayName}/>
       }/>
       <Route path="/user/search" element={
         <Search/>

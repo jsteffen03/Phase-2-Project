@@ -2,12 +2,11 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { FormField, Button, Form } from 'semantic-ui-react'
 
-function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit}){
+function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit, handleDelete, displayName, setDisplayName}){
 
     const [toggleEdit,setToggleEdit] = useState(false)
     const [name, setName] = useState("")
     const [notes, setNotes] = useState("")
-    const [displayName, setDisplayName] = useState("")
     const [displayNotes, setDisplayNotes] = useState("")
     const [id, setId] = useState("")
     const [displayShrubs, setDisplayShurbs] = useState([])
@@ -110,7 +109,7 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
                     <h3>Total: {totalPlants}</h3>
                     <h4>Shrubs</h4>
                     <h4>Total: {totalShrubs}</h4>
-                    {displayLandscaper && displayLandscaper.length > 0 ? (
+                    {displayShrubs && displayShrubs.length > 0 ? (
                     <ul>
                         {displayShrubs.map((shrub, index) => (
                             <li key={index}>{shrub.plantName}</li>
@@ -120,7 +119,7 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
                     <p>No Shrubs selected for this project</p>}             
                     <h4>Trees:</h4>
                     <h4>Total: {totalTrees}</h4>
-                    {displayLandscaper && displayLandscaper.length > 0 ? (
+                    {displayTrees && displayTrees.length > 0 ? (
                     <ul>
                         {displayTrees.map((tree, index) => (
                             <li key={index}>{tree.plantName}</li>
@@ -129,7 +128,7 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
                     ) : 
                     <p>No Trees selected for this project</p>} 
                     <h3>Landscape Companies</h3>
-                    {displayLandscaper && displayLandscaper.length > 0 ? (
+                    {displayName &&  displayLandscaper && displayLandscaper.length > 0 ? (
                     <ul>
                         {displayLandscaper.map((landscaper, index) => (
                             <li key={index}>{landscaper.username}</li>
@@ -153,8 +152,9 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
                             <Button type="submit">Save</Button>
                         </Form>
                         :
-                        <p>{displayNotes}</p>
+                        <p>{ displayName ? displayNotes :"No Project displayed"}</p>
                     }
+                    <Button color="red" onClick={()=>(handleDelete(id))}>Delete Project</Button>
                 </div>
             </div>
         </div>
