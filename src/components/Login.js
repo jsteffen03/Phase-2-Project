@@ -9,7 +9,6 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
     const navigate = useNavigate()
 
     function loginUser(){
-        console.log(userData)
         const foundUser = userData.find((users) => users.username === user);
         if (foundUser) {
             if (foundUser.password === password) {

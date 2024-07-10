@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { FormField, Button, Form } from 'semantic-ui-react'
+import '../styles.css';
 
 function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit, handleDelete, displayName, setDisplayName}){
 

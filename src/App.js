@@ -19,7 +19,7 @@ function App() {
   const [displayName, setDisplayName] = useState("")
 
   useEffect(()=>{
-    fetch("https://perenual.com/api/species-list?key=sk-9AFw6684d830513f76129")
+    fetch("http://localhost:4000/plants")
     .then(r=>r.json())
     .then(data=>setPlants(data))
     }
@@ -95,23 +95,23 @@ function App() {
   return (
     <div>
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={
-        <Home/>
-      }/>
-      <Route path="/login" element={
-        <Login user={user} setUser={setUser} setUserData={setUserData} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData} currentUser={currentUser}/>
-      }/>
-      <Route path="/landscaper" element={
-        <Landscaperpage/>
-      }/>
-      <Route path="/user" element={
-        <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit} handleDelete={handleDelete} displayName={displayName} setDisplayName={setDisplayName}/>
-      }/>
-      <Route path="/user/search" element={
-        <Search/>
-      }/>
-    </Routes>
+      <Routes>
+        <Route path="/" element={
+          <Home/>
+        }/>
+        <Route path="/login" element={
+          <Login user={user} setUser={setUser} setUserData={setUserData} password={password} setPassword={setPassword} userData={userData} landscapeData={landscapeData} currentUser={currentUser}/>
+        }/>
+        <Route path="/landscaper" element={
+          <Landscaperpage/>
+        }/>
+        <Route path="/user" element={
+          <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit} handleDelete={handleDelete} displayName={displayName} setDisplayName={setDisplayName}/>
+        }/>
+        <Route path="/user/search" element={
+          <Search plants={plants}/>
+        }/>
+      </Routes>
     </BrowserRouter>
     </div>
   );

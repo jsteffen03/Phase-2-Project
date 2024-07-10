@@ -116,3 +116,29 @@
   padding: 20px; 
   margin: auto;
 }
+
+.Content2 {
+  display: flex;
+  height: 100%; 
+}
+
+.addPlant{
+  border: 1px solid #355e3b;
+  border-radius: 20px; 
+  background-color: rgb(239, 236, 217);
+  width: 26%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 0px; 
+  height: 90%;
+}
+
+.plants{
+  border: 1px solid #355e3b;
+  border-radius: 20px;
+  background-color: rgb(239, 236, 217);
+  width: 70%;
+  padding: 20px;
+  margin: auto; 
+  height: 100%;
+}
