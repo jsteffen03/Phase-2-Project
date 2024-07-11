@@ -92,8 +92,19 @@ function App() {
     setDisplayName("")
   }
 
+  function addPlant(newPlant){
+    fetch("http://localhost:4000/plants",{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(newPlant)
+    })
+    .then(r=>r.json())
+    .then(data=> setPlants([...plants,data]))
+    console.log(plants)
+  }
+
   return (
-    <div>
+    <div className="body2">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
@@ -109,7 +120,7 @@ function App() {
           <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit} handleDelete={handleDelete} displayName={displayName} setDisplayName={setDisplayName}/>
         }/>
         <Route path="/user/search" element={
-          <Search plants={plants}/>
+          <Search plants={plants} addPlant={addPlant}/>
         }/>
       </Routes>
     </BrowserRouter>
