@@ -247,7 +247,7 @@
       "id": 30,
       "common_name": "Sunrise Forsythia",
       "scientific_name": "Abeliophyllum distichum",
-      "type": "shurb",
+      "type": "Shrub",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/sunrise_forsythia_full_bush-600x600.jpg"
     },
     {
@@ -501,6 +501,13 @@
       "scientific_name": "Spiraea japonica 'Goldmound'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/d/o/double-play-gold-spirea-landscape-600x600_1.webp"
+    },
+    {
+      "id": "e159",
+      "common_name": "Tor Spirea",
+      "scientific_name": "Spiraea betulifolia 'Tor'",
+      "type": "Shrub",
+      "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/t/o/tor-spirea-shrub-600x600.webp"
     }
   ]
 }

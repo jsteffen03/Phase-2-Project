@@ -3,29 +3,38 @@ import { Button, Card, Form, FormField, FormSelect } from 'semantic-ui-react'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
 
-function Search({plants, addPlant}){
+function Search({plants, addPlant, filteredPlants, setFilteredPlants}){
     const [search, setSearch] = useState("")
     const [filter, setFilter] = useState("")
     const navigate = useNavigate()
-    const [filteredPlants, setFilteredPlants] = useState(plants) // this is not setting filtered plants as plants, or should I do a ternary
     const [name, setName] = useState("")
     const [scName, setScName] = useState("")
     const [type , setType] = useState("")
     const [image, setImage] = useState("")
 
     function handleSearch(e){
-        console.log(filter)
         e.preventDefault()
         setFilteredPlants(plants.filter((plant)=>{
-            if((search === "" || search === " ")&&(filter === "--select--")){ // find out why these dont work
-                return true
-            }
-            if((plant.common_name.toLowerCase().includes(search.toLowerCase()))||(plant.type === filter)){ //find out why these dont work
-                return true
-            }
-            else {
-                return false
-            }}))
+            if (search === "" && filter === "") {
+                return true;
+              }
+            
+              if (search !== "" && plant.common_name.toLowerCase().includes(search.toLowerCase())) {
+                if (filter === "" || plant.type === filter) {
+                  return true;
+                }
+                return false;
+              }
+            
+              if (filter !== "" && plant.type === filter) {
+                if (search === "" || plant.common_name.toLowerCase().includes(search.toLowerCase())) {
+                  return true;
+                }
+                return false;
+              }
+            
+              return false;
+        }))
     }
 
     function submit(e){
@@ -43,6 +52,7 @@ function Search({plants, addPlant}){
         setType("")
         setImage("")
       }
+
 
     const plantRender = filteredPlants.map((plant)=>{
         return <PlantCard key={plant.id} name={plant.common_name} scName={plant.scientific_name} type={plant.type} img={plant.image}/>

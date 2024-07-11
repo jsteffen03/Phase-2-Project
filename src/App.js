@@ -10,6 +10,7 @@ import Search from "./components/Search";
 function App() {
 
   const [plants, setPlants] = useState([])
+  const [filteredPlants, setFilteredPlants] = useState([])
   const [userData, setUserData] = useState([])
   const [landscapeData, setLandscapeData] = useState([])
   const [projectData, setProjectData] = useState([])
@@ -22,6 +23,7 @@ function App() {
     fetch("http://localhost:4000/plants")
     .then(r=>r.json())
     .then(data=>setPlants(data))
+    .then(data=>setFilteredPlants(data))
     }
   ,[])
 
@@ -120,7 +122,7 @@ function App() {
           <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit} handleDelete={handleDelete} displayName={displayName} setDisplayName={setDisplayName}/>
         }/>
         <Route path="/user/search" element={
-          <Search plants={plants} addPlant={addPlant}/>
+          <Search plants={plants} addPlant={addPlant} setFilteredPlants={setFilteredPlants} filteredPlants={filteredPlants}/>
         }/>
       </Routes>
     </BrowserRouter>
