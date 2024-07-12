@@ -1,7 +1,11 @@
 import { CardMeta, CardHeader, CardContent, Card, Button, Image } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
-function PlantCard({name, scName, type, img}){
+function PlantCard({name, scName, type, img, plantToProject, plant}){
+
+    function handleClick(){
+        plantToProject(plant)
+    }
 
     return(
         <Card>
@@ -14,7 +18,7 @@ function PlantCard({name, scName, type, img}){
                 <CardMeta>
                     {type}
                 </CardMeta>
-                <Button color='green'>Add to Project</Button>
+                <Button color='green' onClick={(e)=>handleClick(e)}>Add to Project</Button>
             </CardContent>
         </Card>
     )

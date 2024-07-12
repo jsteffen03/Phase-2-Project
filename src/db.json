@@ -4,6 +4,11 @@
       "id": 1,
       "username": "Justin Steffen",
       "password": "Password1"
+    },
+    {
+      "id": "77fe",
+      "username": "Trevin Steidinger",
+      "password": "Password2"
     }
   ],
   "landscapers": [
@@ -28,15 +33,51 @@
         2
       ],
       "projectNotes": "I am putting plants and boulders in my backyard ",
-      "plants": []
+      "plants": [
+        {
+          "id": 9,
+          "common_name": "Autumn Blaze Maple",
+          "scientific_name": "Acer x freemanii 'Jeffersred'",
+          "type": "Tree",
+          "image": "https://www.naturehills.com/media/klevu_images/200X200/a/u/autumn-blaze-full-trees-2-600x600.jpg"
+        },
+        {
+          "id": 51,
+          "common_name": "Golden Mop Flase Cypress",
+          "scientific_name": "Chamaecyparis pisifera",
+          "type": "Shrub",
+          "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/2/0/20170809_082112-600x600.webp"
+        }
+      ]
     },
     {
-      "id": "520e",
-      "projectName": "Front Yard",
-      "user": "Justin Steffen",
+      "id": "e39d",
+      "projectName": "Pool Side",
+      "user": null,
       "landscaper": [],
-      "projectNotes": "I am putting plants in my frontyard along with different pavers",
-      "plants": []
+      "projectNotes": "I want to put plants around my pool",
+      "plants": [
+        {
+          "common_name": "",
+          "scientific_name": "'",
+          "type": "",
+          "image": ""
+        },
+        {
+          "id": 1,
+          "common_name": "Bald Cypress",
+          "scientific_name": "Taxodium distichum",
+          "type": "Tree",
+          "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/b/a/bald-cypress-tree.webp"
+        },
+        {
+          "id": 6,
+          "common_name": "Sugar Maple",
+          "scientific_name": "Acer saccharum",
+          "type": "Tree",
+          "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/sugar-maple-overview-600x600.jpg"
+        }
+      ]
     }
   ],
   "plants": [
@@ -378,7 +419,7 @@
     },
     {
       "id": 49,
-      "common_name": "Upright RedChokeBerry",
+      "common_name": "Upright Red ChokeBerry",
       "scientific_name": "Aronia arbutifolia",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/u/p/upright_red_chokeberry_overview003_1.webp"
@@ -503,11 +544,11 @@
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/d/o/double-play-gold-spirea-landscape-600x600_1.webp"
     },
     {
-      "id": "e159",
-      "common_name": "Tor Spirea",
-      "scientific_name": "Spiraea betulifolia 'Tor'",
+      "id": "49b1",
+      "common_name": "Little Princess Spirea",
+      "scientific_name": "Spiraea betulifolia",
       "type": "Shrub",
-      "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/t/o/tor-spirea-shrub-600x600.webp"
+      "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/l/i/little-princess-spirea-shrub-600x600.webp"
     }
   ]
 }

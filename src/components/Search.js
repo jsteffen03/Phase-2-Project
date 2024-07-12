@@ -3,7 +3,7 @@ import { Button, Card, Form, FormField, FormSelect } from 'semantic-ui-react'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
 
-function Search({plants, addPlant, filteredPlants, setFilteredPlants}){
+function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCode, projectData, handlePlantToProject, setProjectData, setDisplayName}){
     const [search, setSearch] = useState("")
     const [filter, setFilter] = useState("")
     const navigate = useNavigate()
@@ -45,7 +45,6 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants}){
             type: type,
             image: image
         }
-        console.log(newPlant)
         addPlant(newPlant)
         setName("")
         setScName("")
@@ -53,30 +52,52 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants}){
         setImage("")
       }
 
+    function plantToProject(correctPlant){
+        const correctProject = projectData.filter((project)=>{
+            if(project.id === displayCode){
+                return true
+            } 
+            return false
+        })
+
+        correctProject.forEach((project) => {
+            const newPlants = [...project.plants, correctPlant]
+            const updatedProj = {
+                projectName: project.projectName,
+                user: project.user,
+                landscaper: project.landscaper,
+                projectNotes: project.projectNotes,
+                plants: newPlants
+            }
+            setProjectData(updatedProj)
+            handlePlantToProject(project.id, updatedProj)
+        })
+ 
+    }
 
     const plantRender = filteredPlants.map((plant)=>{
-        return <PlantCard key={plant.id} name={plant.common_name} scName={plant.scientific_name} type={plant.type} img={plant.image}/>
+        return <PlantCard key={plant.id} plant = {plant} name={plant.common_name} scName={plant.scientific_name} type={plant.type} img={plant.image} plantToProject={plantToProject}/>
     })
-
+  
     const options = [
         { key: 'a', text: '--Select--', value: '' },
         { key: 't', text: 'Tree', value: 'Tree' },
         { key: 's', text: 'Shrub', value: 'Shrub' }
-      ]
+    ]
 
     return(
         <div className="container">
             <div className="Header"> 
                 <h1>My Landscaper</h1>
                 <div>
-                    <Button color="black" onClick={()=>navigate("/user")}>Back to Projects</Button> 
+                    <Button color="black" onClick={(e) => {navigate("/user");setDisplayName("")}}>Back to Projects</Button> 
                 </div>
             </div> 
             <div className="Content2">
                 <div className="addPlant">
                     <Form onSubmit={(e)=>handleSearch(e)}>
                         <h2>Search</h2> 
-                        <Button color='black'>Search</Button>
+                        <Button color='black' type="submit" >Search</Button>
                         <FormField>
                             <label>Plant Name</label>
                             <input type="text" placeholder="Plant Name" onChange={(e)=>setSearch(e.target.value)}></input>
@@ -91,7 +112,7 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants}){
                     <div>
                     <Form onSubmit={(e)=>submit(e)}>
                         <h3>Can't find a plant? Add one here!</h3> 
-                        <Button color='black' onClick={(e)=>console.log(e)}>Add Plant</Button>
+                        <Button color='black'>Add Plant</Button>
                         <FormField>
                             <label>Plant Name</label>
                             <input type="text" placeholder="Plant Name" onChange={(e)=>setName(e.target.value)}></input>

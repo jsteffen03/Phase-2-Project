@@ -2,22 +2,12 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { FormField, Button, Form } from 'semantic-ui-react'
 import '../styles.css';
-import Search from "./Search";
 
-function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit, handleDelete, displayName, setDisplayName}){
-
+function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit, handleDelete, displayName, setDisplayName, displayNotes, displayShrubs, displayTrees, displayLandscaper, totalPlants, totalShrubs, totalTrees, editedNotes, setDisplayLanscaper, setDisplayNotes, setDisplayShurbs, setDisplayTrees, setEditedNotes, setTotalShrubs, setTotalTrees, setTotalPlants, setDisplayCode, displayCode}){
     const [toggleEdit,setToggleEdit] = useState(false)
     const [name, setName] = useState("")
     const [notes, setNotes] = useState("")
-    const [displayNotes, setDisplayNotes] = useState("")
     const [id, setId] = useState("")
-    const [displayShrubs, setDisplayShurbs] = useState([])
-    const [displayTrees, setDisplayTrees] = useState([])
-    const [displayLandscaper, setDisplayLanscaper] = useState([])
-    const [totalPlants, setTotalPlants] = useState("")
-    const [totalShrubs, setTotalShrubs] = useState("")
-    const [totalTrees, setTotalTrees] = useState("")
-    const [editedNotes, setEditedNotes] = useState(displayNotes)
     const navigate = useNavigate()
 
     function addProject(e){
@@ -27,7 +17,12 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
             user: currentUser.current,
             landscaper: [],
             projectNotes: notes,
-            plants: []
+            plants: [{
+                common_name: "",
+                scientific_name: "'",
+                type: "",
+                image: ""
+            }]
         }
         handleSubmit(newProj)
         setName('');
@@ -37,7 +32,7 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
     function logOut(){
         setUser("")
         currentUser = ""
-        navigate("/")
+        navigate("/login")
     }
 
     const filteredProject = projectData.filter(project=>{
@@ -52,8 +47,8 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
     })
 
     function displayProject(project){
-        const shrubs = project.plants.filter(plant => plant.type === 'shrub');
-        const trees = project.plants.filter(plant => plant.type === 'tree');
+        const shrubs = project.plants.filter(plant => plant.type === 'Shrub');
+        const trees = project.plants.filter(plant => plant.type === 'Tree');
         const landscapers = landscapeData.filter(landscaper => project.landscaper.includes(landscaper.id));        
         setDisplayTrees(trees)
         setDisplayShurbs(shrubs)
@@ -64,6 +59,7 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
         setDisplayName(project.projectName)
         setDisplayNotes(project.projectNotes)
         setDisplayLanscaper(landscapers) 
+        setDisplayCode(project.id)
     }
 
     function handleClick(){
@@ -85,7 +81,7 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
             <div className="Header"> 
                 <h1>My Landscaper</h1>
                 <div>
-                    <Button color="black" onClick={logOut}>Log Out</Button> 
+                    <Button color="black" onClick={(e)=>{logOut(e);setDisplayName("")}}>Log Out</Button> 
                 </div>
             </div> 
             <div className="Content">
@@ -106,25 +102,25 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
                     </Form>
                 </div>
                 <div className="ProjectPlants">
-                    {!(displayName === "") ? <h2 className="About" >Project: {displayName} - Code: {id}</h2>: <h2 className="About" >No Project Selected</h2>}
+                    {!(displayName === "") ? <h2 className="About" >Project: {displayName} - Code: {displayCode}</h2>: <h2 className="About" >No Project Selected</h2>}
                     <h3>Project Plants</h3>
                     <h3>Total: {totalPlants}</h3>
                     <h4>Shrubs</h4>
                     <h4>Total: {totalShrubs}</h4>
-                    {displayShrubs && displayShrubs.length > 0 ? (
+                    {displayName && displayShrubs && displayShrubs.length > 0 ? (
                     <ul>
                         {displayShrubs.map((shrub, index) => (
-                            <li key={index}>{shrub.plantName}</li>
+                            <li key={index}>{shrub.common_name}</li>
                         ))}
                     </ul>
                     ) : 
                     <p>No Shrubs selected for this project</p>}             
                     <h4>Trees:</h4>
                     <h4>Total: {totalTrees}</h4>
-                    {displayTrees && displayTrees.length > 0 ? (
+                    {displayName && displayTrees && displayTrees.length > 0 ? (
                     <ul>
                         {displayTrees.map((tree, index) => (
-                            <li key={index}>{tree.plantName}</li>
+                            <li key={index}>{tree.common_name}</li>
                         ))}
                     </ul>
                     ) : 
@@ -139,7 +135,9 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
                     ) : 
                     <p>No Landscapers can see this project</p> }
                     <div className="Button">
-                        <Button color='green' onClick={()=>navigate("/user/search")}>Search Plants</Button>
+                        <Button color='green' onClick={() => {if (displayName === "") {alert("Please Select Project")} else {navigate("/user/search")}}}>
+                            Search Plants
+                        </Button>
                     </div>
                 </div>
                 <div className="ProjectNotes">

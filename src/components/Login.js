@@ -53,9 +53,7 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
                   })
                   .then(response => response.json())
                   .then(data => {
-                    console.log('Success:', data);
                     const newArr = [...userData, newData]
-                    console.log(newArr)
                     setUserData(newArr);
                     navigate("/user");
                   })
@@ -71,7 +69,6 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
     }
     
     function createLandscaper(){
-        console.log(userData)
         const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === user);
         if (!foundLandscaper) {
             if (verifyPassword === password) {
@@ -88,9 +85,7 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
                   })
                   .then(response => response.json())
                   .then(data => {
-                    console.log('Success:', data);
                     const newArr = [...userData, newData]
-                    console.log(newArr)
                     setUserData(newArr);
                     navigate("/user");
                   })

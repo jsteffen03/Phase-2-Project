@@ -17,13 +17,25 @@ function App() {
   const [user, setUser] = useState("")
   const currentUser = useRef(null)
   const [password, setPassword] = useState("")
+  const [displayNotes, setDisplayNotes] = useState("")
   const [displayName, setDisplayName] = useState("")
+  const [displayCode, setDisplayCode] = useState("")
+  const [displayShrubs, setDisplayShurbs] = useState([])
+  const [displayTrees, setDisplayTrees] = useState([])
+  const [displayLandscaper, setDisplayLanscaper] = useState([])
+  const [totalPlants, setTotalPlants] = useState("")
+  const [totalShrubs, setTotalShrubs] = useState("")
+  const [totalTrees, setTotalTrees] = useState("")
+  const [editedNotes, setEditedNotes] = useState(displayNotes)
+
 
   useEffect(()=>{
     fetch("http://localhost:4000/plants")
     .then(r=>r.json())
-    .then(data=>setPlants(data))
-    .then(data=>setFilteredPlants(data))
+    .then(data=>{
+      setPlants(data);
+      setFilteredPlants(data);
+     })
     }
   ,[])
 
@@ -89,7 +101,6 @@ function App() {
         }
         return true
     })
-    console.log(notRemoved)
     setProjectData(notRemoved)
     setDisplayName("")
   }
@@ -102,7 +113,25 @@ function App() {
     })
     .then(r=>r.json())
     .then(data=> setPlants([...plants,data]))
-    console.log(plants)
+  }
+
+  function handlePlantToProject(correctProject, updatedProj){
+    fetch(`http://localhost:4000/projects/${correctProject}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(updatedProj)
+    })
+    .then(r => r.json())
+    .then(updatedData => {
+      const updatedProjectData = projectData.map(project => {
+        if (project.id === correctProject) {
+          return updatedData; 
+        }
+        return project; 
+      });
+      setProjectData(updatedProjectData);
+      alert("Added to Project"); 
+    })
   }
 
   return (
@@ -119,10 +148,26 @@ function App() {
           <Landscaperpage/>
         }/>
         <Route path="/user" element={
-          <Userpage handleSubmit={handleSubmit} currentUser={currentUser} setUser={setUser} projectData={projectData} landscapeData={landscapeData} handleEdit={handleEdit} handleDelete={handleDelete} displayName={displayName} setDisplayName={setDisplayName}/>
+          <Userpage handleSubmit={handleSubmit} 
+          currentUser={currentUser} setUser={setUser} 
+          projectData={projectData} setProjectData={setProjectData}
+          landscapeData={landscapeData} 
+          handleEdit={handleEdit} 
+          handleDelete={handleDelete} 
+          displayNotes={displayNotes} setDisplayNotes={setDisplayNotes}
+          displayName={displayName} setDisplayName={setDisplayName} 
+          displayShrubs={displayShrubs} setDisplayShurbs={setDisplayShurbs}
+          displayTrees={displayTrees} setDisplayTrees={setDisplayTrees}
+          displayLandscaper={displayLandscaper} setDisplayLanscaper={setDisplayLanscaper}
+          totalPlants={totalPlants} setTotalPlants={setTotalPlants}
+          totalShrubs={totalShrubs} setTotalShrubs={setTotalShrubs}
+          totalTrees={totalTrees} setTotalTrees={setTotalTrees}
+          editedNotes={editedNotes} setEditedNotes={setEditedNotes}
+          displayCode={displayCode} setDisplayCode={setDisplayCode}
+          />
         }/>
         <Route path="/user/search" element={
-          <Search plants={plants} addPlant={addPlant} setFilteredPlants={setFilteredPlants} filteredPlants={filteredPlants}/>
+          <Search plants={plants} addPlant={addPlant} setFilteredPlants={setFilteredPlants} filteredPlants={filteredPlants} displayCode={displayCode} projectData={projectData} handlePlantToProject={handlePlantToProject} setProjectData={setProjectData} setDisplayName={setDisplayName}/>
         }/>
       </Routes>
     </BrowserRouter>
