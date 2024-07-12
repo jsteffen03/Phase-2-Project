@@ -17,17 +17,10 @@ function App() {
   const [user, setUser] = useState("")
   const currentUser = useRef(null)
   const [password, setPassword] = useState("")
+  // Declaring States for the elemnents of Userpage here, Declared in the app level so can change on edit, and delete.
   const [displayNotes, setDisplayNotes] = useState("")
   const [displayName, setDisplayName] = useState("")
   const [displayCode, setDisplayCode] = useState("")
-  const [displayShrubs, setDisplayShurbs] = useState([])
-  const [displayTrees, setDisplayTrees] = useState([])
-  const [displayLandscaper, setDisplayLanscaper] = useState([])
-  const [totalPlants, setTotalPlants] = useState("")
-  const [totalShrubs, setTotalShrubs] = useState("")
-  const [totalTrees, setTotalTrees] = useState("")
-  const [editedNotes, setEditedNotes] = useState(displayNotes)
-
 
   useEffect(()=>{
     fetch("http://localhost:4000/plants")
@@ -156,13 +149,6 @@ function App() {
           handleDelete={handleDelete} 
           displayNotes={displayNotes} setDisplayNotes={setDisplayNotes}
           displayName={displayName} setDisplayName={setDisplayName} 
-          displayShrubs={displayShrubs} setDisplayShurbs={setDisplayShurbs}
-          displayTrees={displayTrees} setDisplayTrees={setDisplayTrees}
-          displayLandscaper={displayLandscaper} setDisplayLanscaper={setDisplayLanscaper}
-          totalPlants={totalPlants} setTotalPlants={setTotalPlants}
-          totalShrubs={totalShrubs} setTotalShrubs={setTotalShrubs}
-          totalTrees={totalTrees} setTotalTrees={setTotalTrees}
-          editedNotes={editedNotes} setEditedNotes={setEditedNotes}
           displayCode={displayCode} setDisplayCode={setDisplayCode}
           />
         }/>

@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Justin Steffen",
       "password": "Password1"
     },
@@ -13,12 +13,12 @@
   ],
   "landscapers": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Zebrascapes",
       "password": "tkhaley"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "Pheasant Ridge",
       "password": "corbin1"
     }
@@ -47,6 +47,27 @@
           "scientific_name": "Chamaecyparis pisifera",
           "type": "Shrub",
           "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/2/0/20170809_082112-600x600.webp"
+        },
+        {
+          "id": "10",
+          "common_name": "Monkey Puzzle Tree",
+          "scientific_name": "Araucaria araucana",
+          "type": "Tree",
+          "image": "https://www.naturehills.com/media/klevu_images/200X200/m/o/money-tree-1-600x600.jpg"
+        },
+        {
+          "id": "6",
+          "common_name": "Sugar Maple",
+          "scientific_name": "Acer saccharum",
+          "type": "Tree",
+          "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/sugar-maple-overview-600x600.jpg"
+        },
+        {
+          "id": "5",
+          "common_name": "Snakebark Maple",
+          "scientific_name": "Acer davidii",
+          "type": "Tree",
+          "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/summer-red-maple-tree-600x600_1.jpg"
         }
       ]
     },
@@ -82,462 +103,462 @@
   ],
   "plants": [
     {
-      "id": 1,
+      "id": "1",
       "common_name": "Bald Cypress",
       "scientific_name": "Taxodium distichum",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/b/a/bald-cypress-tree.webp"
     },
     {
-      "id": 2,
+      "id": "2",
       "common_name": "Austrian Pine Tree",
       "scientific_name": "Abies alba 'Pyramidalis'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/a/u/austrian-pine--full-higher-res.webp"
     },
     {
-      "id": 3,
+      "id": "3",
       "common_name": "White Fir",
       "scientific_name": "Silver Fir",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/d/o/douglas_fir_large-600x600.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "common_name": "Johin Japanese Maple",
       "scientific_name": "Acer 'Johin'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/l/a/large-japanese-red-maple-in-clay-pot-by-trellis-600x600.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "common_name": "Snakebark Maple",
       "scientific_name": "Acer davidii",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/summer-red-maple-tree-600x600_1.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "common_name": "Sugar Maple",
       "scientific_name": "Acer saccharum",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/sugar-maple-overview-600x600.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "common_name": "Japanese Maple",
       "scientific_name": "Acer palmatum",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/e/m/emperor-one-japanese-maple-2-600x600.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "common_name": "Autumn Flame Red Maple",
       "scientific_name": "Acer rubrum 'Autumn Flame'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/r/e/red-sunset-maple-600x600.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "common_name": "Autumn Blaze Maple",
       "scientific_name": "Acer x freemanii 'Jeffersred'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/a/u/autumn-blaze-full-trees-2-600x600.jpg"
     },
     {
-      "id": 10,
+      "id": "10",
       "common_name": "Monkey Puzzle Tree",
       "scientific_name": "Araucaria araucana",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/m/o/money-tree-1-600x600.jpg"
     },
     {
-      "id": 11,
+      "id": "11",
       "common_name": "Summer Cascade Weeping River Birch",
       "scientific_name": "Betula nigra 'Summer Cascade'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/r/i/river-birch-7-600x600_1__1.jpg"
     },
     {
-      "id": 12,
+      "id": "12",
       "common_name": "Whitespire Birch",
       "scientific_name": "Betula populifolia 'Whitespire'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/w/h/whitespire-birch-800x800.jpg"
     },
     {
-      "id": 13,
+      "id": "13",
       "common_name": "Eastern Redbud (tree form)",
       "scientific_name": "Cercis canadensis '(tree form)'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/e/a/eastern_redbud_600x600_1.jpg"
     },
     {
-      "id": 14,
+      "id": "14",
       "common_name": "Blue Atlas Cedar",
       "scientific_name": "Cedrus atlantica 'Glauca'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/h/o/horstmann-blue-atlas-cedar-1-600x600.jpg"
     },
     {
-      "id": 15,
+      "id": "15",
       "common_name": "Deodar Cedar",
       "scientific_name": "Cedrus deodara",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/d/e/deodar-cedar-3-600x600.jpg"
     },
     {
-      "id": 16,
+      "id": "16",
       "common_name": "Constellation Flowering Dogwood",
       "scientific_name": "Cornus 'Constellation'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/w/h/white-flowering-dogwood-full-3-600x600.jpg"
     },
     {
-      "id": 17,
+      "id": "17",
       "common_name": "Castlewellan Leyland Cypress",
       "scientific_name": "Cupressocyparis x leylandii 'Castlewellan'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/l/e/leyland-cypress-5-800x800.jpg"
     },
     {
-      "id": 18,
+      "id": "18",
       "common_name": "Dove Tree",
       "scientific_name": "Davidia involucrata",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/s/n/snow-on-the-mountain-camellia-425x425.jpg"
     },
     {
-      "id": 19,
+      "id": "19",
       "common_name": "Japanese Persimmon",
       "scientific_name": "Diospyros kaki",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/a/m/american-persimmon-tree-600x600.jpg"
     },
     {
-      "id": 20,
+      "id": "20",
       "common_name": "Sunburst Honeylocust",
       "scientific_name": "Gleditsia triacanthos 'Suncole'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/0/1/0175-4_gledtriinersunbursthoneylocust-600x600.jpg"
     },
     {
-      "id": 21,
+      "id": "21",
       "common_name": "Blue Chip Juniper (tree form)",
       "scientific_name": "Juniperus horizontalis 'Blue Chip (tree form)'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/b/l/blue-chip-juniper-712x712.jpg"
     },
     {
-      "id": 22,
+      "id": "22",
       "common_name": "Blue Star Juniper",
       "scientific_name": "Juniperus squamata 'Blue Star (tree form)'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/b/l/blue_star_juniper_600x600.jpg"
     },
     {
-      "id": 23,
+      "id": "23",
       "common_name": "White Weeping Cherry",
       "scientific_name": "Prunus subhirtella (Pendula)",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/w/h/white-snow-fountain-weeping-cherry-tree-in-bloom-600x600.jpg"
     },
     {
-      "id": 24,
+      "id": "24",
       "common_name": "Daybreak Magnolia",
       "scientific_name": "Magnolia 'Daybreak'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/d/a/daybreak-magnolia-2-425x425.jpg"
     },
     {
-      "id": 25,
+      "id": "25",
       "common_name": "Merrill Magnolia",
       "scientific_name": "Magnolia x loebneri 'Merrill'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/catalog/product/cache/1710302e448e18dd210bfc60a5382668/m/e/merrill-magnolia-up-close-600x600.webp"
     },
     {
-      "id": 26,
+      "id": "26",
       "common_name": "Sentinel Flowering Crab",
       "scientific_name": "Malus 'Sentinel'",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/r/o/royal-raindrops-crabapple-young-tree-2-600x600.jpg"
     },
     {
-      "id": 27,
+      "id": "27",
       "common_name": "Dawn Redwood",
       "scientific_name": "Metasequoia glyptostroboides",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/d/a/dawn-redwood-tree-425x425.jpg"
     },
     {
-      "id": 28,
+      "id": "28",
       "common_name": "Norway Spruce",
       "scientific_name": "Picea abies",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/n/o/norway-spruce-treewithouttrunk-1.jpg"
     },
     {
-      "id": 29,
+      "id": "29",
       "common_name": "Chinese abelia",
       "scientific_name": "Abelia chinensis",
       "type": "Tree",
       "image": "https://www.naturehills.com/media/catalog/product/cache/1710302e448e18dd210bfc60a5382668/r/u/ruby_anniversary_abelia_full_bush.webp"
     },
     {
-      "id": 30,
+      "id": "30",
       "common_name": "Sunrise Forsythia",
       "scientific_name": "Abeliophyllum distichum",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/klevu_images/200X200/s/u/sunrise_forsythia_full_bush-600x600.jpg"
     },
     {
-      "id": 31,
+      "id": "31",
       "common_name": "Dark Green Spreader Yew",
       "scientific_name": "Taxus x media",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/d/a/dark_green_spreader_yew_600x600.webp"
     },
     {
-      "id": 32,
+      "id": "32",
       "common_name": "Common Purple Lilac",
       "scientific_name": "Syringa vulgaris",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/c/o/common-purple-lilac-3-800x800.webp"
     },
     {
-      "id": 33,
+      "id": "33",
       "common_name": "Winter Gem Boxwood",
       "scientific_name": "Buxus microphylla var. japonica",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/1710302e448e18dd210bfc60a5382668/w/i/winter-gem-boxwood-600x600.webp"
     },
     {
-      "id": 34,
+      "id": "34",
       "common_name": "Snowmound Spirea",
       "scientific_name": "Spiraea nipponica",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/s/n/snowmound-spirea-flowers-close-up-600x600.webp"
     },
     {
-      "id": 35,
+      "id": "35",
       "common_name": "Annabelle Hydrangea",
       "scientific_name": "Hydrangea arborescens",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/a/n/annabelle-hydrangea-overview-600x600_1.webp"
     },
     {
-      "id": 36,
+      "id": "36",
       "common_name": "Goldmound Spirea",
       "scientific_name": "Spiraea japonica",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/g/o/goldmound-spirea-foliage-close-up-600x600.webp"
     },
     {
-      "id": 37,
+      "id": "37",
       "common_name": "Cheyenne Privet",
       "scientific_name": "LIGUSTRUM VULGARE 'CHEYENNE'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/c/h/cheyenne-privet-1-800x8001.webp"
     },
     {
-      "id": 38,
+      "id": "38",
       "common_name": "Black Knight Butterfly Bush",
       "scientific_name": "Buddleia",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/b/l/black-knight-butterfly-bush-4-600x600.webp"
     },
     {
-      "id": 39,
+      "id": "39",
       "common_name": "Sky Pencil Holly",
       "scientific_name": "Ilex crenata",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/s/k/sky-pencil-holly-_2_-600x600.webp"
     },
     {
-      "id": 40,
+      "id": "40",
       "common_name": "Yankee Doodle Lilac",
       "scientific_name": "Syringa vulgaris",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/y/a/yankee-doodle-lilac-full-425x425.webp"
     },
     {
-      "id": 41,
+      "id": "41",
       "common_name": "Chicago Fire Burning Bush",
       "scientific_name": "Euonymus alatus",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/c/h/chicago-fire-burning-bush-leaves-600x600.webp"
     },
     {
-      "id": 42,
+      "id": "42",
       "common_name": "White Chiffon Rose of Sharon",
       "scientific_name": "Hibiscus syriacus",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/w/h/white-chiffon-rose-of-sharon-1-600x600.webp"
     },
     {
-      "id": 43,
+      "id": "43",
       "common_name": "Cranberry Cotoneaster",
       "scientific_name": "Cotoneaster apiculatus",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/c/r/cranberry-cotoneaster.webp"
     },
     {
-      "id": 44,
+      "id": "44",
       "common_name": "Color Guard Yucca",
       "scientific_name": "Yucca filamentosa 'Color Guard'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/c/o/color-guard-yucca-_2_-600x600.webp"
     },
     {
-      "id": 45,
+      "id": "45",
       "common_name": "Crimson Pygmy Barberry",
       "scientific_name": "Berberis thunbergii",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/c/r/crimson-pygmy-barberry-bush-600x600.webp"
     },
     {
-      "id": 46,
+      "id": "46",
       "common_name": "Yellow Twig Dogwood",
       "scientific_name": "Cornus sericea 'Flaviramea'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/y/e/yellow-twig-dogwood-600x600.webp"
     },
     {
-      "id": 47,
+      "id": "47",
       "common_name": "Dwarf Mugo Pine",
       "scientific_name": "Pinus mugo",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/d/w/dwarf-mugo-pine-shrub-600x600_1.webp"
     },
     {
-      "id": 48,
+      "id": "48",
       "common_name": "Sugartina Summersweet",
       "scientific_name": "Clethra alnifolia",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/s/u/sugartina-summersweet-1-600x600-unwatermarked.webp"
     },
     {
-      "id": 49,
+      "id": "49",
       "common_name": "Upright Red ChokeBerry",
       "scientific_name": "Aronia arbutifolia",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/u/p/upright_red_chokeberry_overview003_1.webp"
     },
     {
-      "id": 50,
+      "id": "50",
       "common_name": "Royal Purple Smokebush",
       "scientific_name": "Cotinus coggygria",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/r/o/royal_purple_smokebush_overview2020-600x600.webp"
     },
     {
-      "id": 51,
+      "id": "51",
       "common_name": "Golden Mop Flase Cypress",
       "scientific_name": "Chamaecyparis pisifera",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/2/0/20170809_082112-600x600.webp"
     },
     {
-      "id": 52,
+      "id": "52",
       "common_name": "Arthur J. Simmonds BlueBeard",
       "scientific_name": "Caryopteris",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/a/r/arthur-j-simmonds-bluebeard-full-425x425.webp"
     },
     {
-      "id": 53,
+      "id": "53",
       "common_name": "Korean Rhododendron",
       "scientific_name": "Rhododendron mucronulatum",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/k/o/korean-rhododendron-landscape-600x600.webp"
     },
     {
-      "id": 54,
+      "id": "54",
       "common_name": "Sunshine Privet",
       "scientific_name": "Ligustrum sinense",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/s/u/sunshine-ligustrum-shrubs-600x600.webp"
     },
     {
-      "id": 55,
+      "id": "55",
       "common_name": "Hino Crimson Kurume Azalea",
       "scientific_name": "Azalea x 'Hino-Crimson",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/h/i/hino_crimson_azalea_1_600x600.webp"
     },
     {
-      "id": 56,
+      "id": "56",
       "common_name": "Taunton Spreading Yew",
       "scientific_name": "Taxus media 'Tautonii'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/t/a/taunton_spreading_yew_600x600.webp"
     },
     {
-      "id": 57,
+      "id": "57",
       "common_name": "Lemon Lime Nandina",
       "scientific_name": "Nandina domestica",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/p/l/plant_3_.webp"
     },
     {
-      "id": 58,
+      "id": "58",
       "common_name": "Kodiak Red Bush Honeysuckle",
       "scientific_name": "Kodiak® Red Diervilla x 'G2X885411'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/k/o/kodiak-red-honeysuckle-bush-2-600x600.webp"
     },
     {
-      "id": 59,
+      "id": "59",
       "common_name": "Fire Chief Arborvitae",
       "scientific_name": "Thuja Occidentalis 'Congabe'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/2/0/20180601_134747-600x600.webp"
     },
     {
-      "id": 60,
+      "id": "60",
       "common_name": "Dwarf Forsythia",
       "scientific_name": "Forsythia 'Arnold Dwarf'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/d/w/dwarf-forsythia-medium-dist-425x425.webp"
     },
     {
-      "id": 61,
+      "id": "61",
       "common_name": "Green Gem Boxwood",
       "scientific_name": "Buxus microphylla var.",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/g/r/green_gem_boxwood_600x600_3.webp"
     },
     {
-      "id": 62,
+      "id": "62",
       "common_name": "Shrubby cinquefoil",
       "scientific_name": "Potentilla fruticosa 'Abbotswood'",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/a/b/abbotswood-potentilla-1-800x80101.webp"
     },
     {
-      "id": 63,
+      "id": "63",
       "common_name": "Pink Poppet Weigela",
       "scientific_name": "Weigela florida Plangen",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/p/i/pink-poppet-weigela-shrub-covered-in-blooms-600x600.webp"
     },
     {
-      "id": 64,
+      "id": "64",
       "common_name": "Pink Abelia",
       "scientific_name": "Abelia x grandiflora",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/p/i/pink-abelia-blooming-600x600.webp"
     },
     {
-      "id": 65,
+      "id": "65",
       "common_name": "Green Lane Euonymus",
       "scientific_name": "Euonymus fortunei",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/g/r/green_lane_euonymus_600x600.webp"
     },
     {
-      "id": 66,
+      "id": "66",
       "common_name": "Double Play Gold Spirea",
       "scientific_name": "Spiraea japonica 'Goldmound'",
       "type": "Shrub",
@@ -549,6 +570,13 @@
       "scientific_name": "Spiraea betulifolia",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/l/i/little-princess-spirea-shrub-600x600.webp"
+    },
+    {
+      "id": "21cf",
+      "common_name": "Plum Magic Crape Myrtel",
+      "scientific_name": "Lagerstroemia",
+      "type": "Shrub",
+      "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/9/6/9696_7-600x600.webp"
     }
   ]
 }

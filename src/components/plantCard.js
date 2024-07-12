@@ -5,9 +5,9 @@ function PlantCard({name, scName, type, img, plantToProject, plant}){
 
     function handleClick(){
         plantToProject(plant)
-    }
+    }  // sends data to Search
 
-    return(
+    return( // renders each plant card
         <Card>
             <Image alt="uh oh" src={img} />
             <CardContent>

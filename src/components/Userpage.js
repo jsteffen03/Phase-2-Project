@@ -3,14 +3,23 @@ import { useState } from "react"
 import { FormField, Button, Form } from 'semantic-ui-react'
 import '../styles.css';
 
-function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit, handleDelete, displayName, setDisplayName, displayNotes, displayShrubs, displayTrees, displayLandscaper, totalPlants, totalShrubs, totalTrees, editedNotes, setDisplayLanscaper, setDisplayNotes, setDisplayShurbs, setDisplayTrees, setEditedNotes, setTotalShrubs, setTotalTrees, setTotalPlants, setDisplayCode, displayCode}){
+function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeData, handleEdit, handleDelete, setDisplayCode, displayCode, displayName, setDisplayName, setDisplayNotes, displayNotes}){
+    //declaring states
     const [toggleEdit,setToggleEdit] = useState(false)
     const [name, setName] = useState("")
     const [notes, setNotes] = useState("")
     const [id, setId] = useState("")
     const navigate = useNavigate()
+    //declaring display states
+    const [displayShrubs, setDisplayShurbs] = useState([])
+    const [displayTrees, setDisplayTrees] = useState([])
+    const [displayLandscaper, setDisplayLanscaper] = useState([])
+    const [totalPlants, setTotalPlants] = useState("")
+    const [totalShrubs, setTotalShrubs] = useState("")
+    const [totalTrees, setTotalTrees] = useState("")
+    const [editedNotes, setEditedNotes] = useState(displayNotes)
 
-    function addProject(e){
+    function addProject(e){ // function to add a new project to data
         e.preventDefault()
         const newProj = {
             projectName: name,
@@ -29,24 +38,24 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
         setNotes('');    
     }
 
-    function logOut(){
+    function logOut(){ // function to log out and go back to login page
         setUser("")
         currentUser = ""
         navigate("/login")
     }
 
-    const filteredProject = projectData.filter(project=>{
+    const filteredProject = projectData.filter(project=>{ // function to filter through projects and find the ones that are attatched to the filter.
         if(project.user === currentUser.current){
             return true
         }
         return false
     })
 
-    const projects = filteredProject.map(project=>{
+    const projects = filteredProject.map(project=>{ //map function to show each project name
         return <div key={project.id} onClick={()=>displayProject(project)} project={project} >{project.projectName} - Code: {project.id} </div>
     })
 
-    function displayProject(project){
+    function displayProject(project){ // function that on click displays the project that was clicked
         const shrubs = project.plants.filter(plant => plant.type === 'Shrub');
         const trees = project.plants.filter(plant => plant.type === 'Tree');
         const landscapers = landscapeData.filter(landscaper => project.landscaper.includes(landscaper.id));        
@@ -62,12 +71,12 @@ function Userpage({handleSubmit, currentUser, setUser, projectData, landscapeDat
         setDisplayCode(project.id)
     }
 
-    function handleClick(){
+    function handleClick(){ //handles the status of editing the notes
         setToggleEdit(true)
         setEditedNotes(displayNotes)
     }
 
-    function edit(){
+    function edit(){ // handles the edit of the notes
         const editedProj = {
             projectNotes: editedNotes
         }

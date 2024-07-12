@@ -4,11 +4,11 @@ import { FormField, Button, Form } from 'semantic-ui-react'
 
 function Login({user, setUser, password, setPassword, userData, landscapeData, setUserData, currentUser}){
 
-    const [verifyPassword, setVerifyPassword] = useState("")
+    const [verifyPassword, setVerifyPassword] = useState("") //declared state
 
     const navigate = useNavigate()
 
-    function loginUser(){
+    function loginUser(){ // function to login user.
         const foundUser = userData.find((users) => users.username === user);
         if (foundUser) {
             if (foundUser.password === password) {
@@ -22,7 +22,7 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
           }
     }
 
-    function loginLandscaper(){
+    function loginLandscaper(){ // function to login to the landscaper side
         const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === user);
         if (foundLandscaper) {
             if (foundLandscaper.password === password) {
@@ -36,7 +36,7 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
           }
     }
 
-    function createUser(){
+    function createUser(){ // creates a new user
         const foundUser = userData.find((users) => users.username === user);
         if (!foundUser) {
             if (verifyPassword === password) {
@@ -68,7 +68,7 @@ function Login({user, setUser, password, setPassword, userData, landscapeData, s
           }
     }
     
-    function createLandscaper(){
+    function createLandscaper(){ // creates a new landscaper
         const foundLandscaper = landscapeData.find((landscaper) => landscaper.username === user);
         if (!foundLandscaper) {
             if (verifyPassword === password) {

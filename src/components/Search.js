@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
 
 function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCode, projectData, handlePlantToProject, setProjectData, setDisplayName}){
+
+    //declaring states for search function
     const [search, setSearch] = useState("")
     const [filter, setFilter] = useState("")
     const navigate = useNavigate()
@@ -12,7 +14,7 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCod
     const [type , setType] = useState("")
     const [image, setImage] = useState("")
 
-    function handleSearch(e){
+    function handleSearch(e){ // function to filter plantrs either by serach bar or drop down or both
         e.preventDefault()
         setFilteredPlants(plants.filter((plant)=>{
             if (search === "" && filter === "") {
@@ -37,7 +39,7 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCod
         }))
     }
 
-    function submit(e){
+    function submit(e){ // function to add a new plant 
         e.preventDefault()
         const newPlant = {
             common_name: name,
@@ -52,7 +54,7 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCod
         setImage("")
       }
 
-    function plantToProject(correctPlant){
+    function plantToProject(correctPlant){ //function to send a plant to current project
         const correctProject = projectData.filter((project)=>{
             if(project.id === displayCode){
                 return true
@@ -60,7 +62,7 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCod
             return false
         })
 
-        correctProject.forEach((project) => {
+        correctProject.forEach((project) => { 
             const newPlants = [...project.plants, correctPlant]
             const updatedProj = {
                 projectName: project.projectName,
@@ -75,11 +77,11 @@ function Search({plants, addPlant, filteredPlants, setFilteredPlants, displayCod
  
     }
 
-    const plantRender = filteredPlants.map((plant)=>{
+    const plantRender = filteredPlants.map((plant)=>{ // function to map through plant data and display a card for each
         return <PlantCard key={plant.id} plant = {plant} name={plant.common_name} scName={plant.scientific_name} type={plant.type} img={plant.image} plantToProject={plantToProject}/>
     })
   
-    const options = [
+    const options = [ // variable to fill the drop down
         { key: 'a', text: '--Select--', value: '' },
         { key: 't', text: 'Tree', value: 'Tree' },
         { key: 's', text: 'Shrub', value: 'Shrub' }
