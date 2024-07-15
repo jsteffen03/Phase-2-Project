@@ -9,6 +9,11 @@
       "id": "77fe",
       "username": "Trevin Steidinger",
       "password": "Password2"
+    },
+    {
+      "id": "4d5d",
+      "username": "James ",
+      "password": "Password3"
     }
   ],
   "landscapers": [
@@ -32,7 +37,7 @@
         1,
         2
       ],
-      "projectNotes": "I am putting plants and boulders in my backyard ",
+      "projectNotes": "I am putting plants and boulders in my backyard and poolside",
       "plants": [
         {
           "id": 9,
@@ -577,6 +582,13 @@
       "scientific_name": "Lagerstroemia",
       "type": "Shrub",
       "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/9/6/9696_7-600x600.webp"
+    },
+    {
+      "id": "3453",
+      "common_name": "Magic Crape Mrytle",
+      "scientific_name": "plant",
+      "type": "Shrub",
+      "image": "https://www.naturehills.com/media/catalog/product/cache/5645ff797ae51e791a199cf4f9b2d709/l/u/lunar_magic_crape_myrtle_1_600x600.webp"
     }
   ]
 }
